@@ -15,16 +15,14 @@ class GameScene: SKScene
     var mechaLizard = SKSpriteNode()
     var birdMonster = SKSpriteNode()
     var wormMonster = SKSpriteNode()
+    var blackShot = SKSpriteNode()
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView)
     {
-        creategun()
-        createmechalizzard()
-        createbirdmonster()
-        createwormmonster()
+        
     }
     
     
@@ -42,8 +40,6 @@ class GameScene: SKScene
     {
         let gunTexture = SKTexture(imageNamed: "sprite_gun00")
         gun = SKSpriteNode(texture: gunTexture)
-        gun.position = CGPoint(x: frame.midX, y: frame.midY)
-        
         addChild(gun)
         
         let frame2 = SKTexture(imageNamed: "sprite_gun01")
@@ -191,7 +187,27 @@ class GameScene: SKScene
     }
     
     
-    
+    func createBlackShot()
+    {
+        let BlackShotTexture = SKTexture(imageNamed: "Black_Shot00")
+        blackShot = SKSpriteNode(texture: BlackShotTexture)
+        addChild(blackShot)
+        let frame2 = SKTexture(imageNamed: "Black_Shot01")
+        let frame3 = SKTexture(imageNamed: "Black_Shot02")
+        let frame4 = SKTexture(imageNamed: "Black_Shot03")
+        let frame5 = SKTexture(imageNamed: "Black_Shot04")
+        let frame6 = SKTexture(imageNamed: "Black_Shot05")
+        let frame7 = SKTexture(imageNamed: "Black_Shot06")
+        let frame8 = SKTexture(imageNamed: "Black_Shot07")
+        let frame9 = SKTexture(imageNamed: "Black_Shot08")
+        let frame10 = SKTexture(imageNamed: "Black_Shot09")
+        let frame11 = SKTexture(imageNamed: "Black_Shot10")
+        let frame12 = SKTexture(imageNamed: "Black_Shot11")
+        let frame13 = SKTexture(imageNamed: "Black_Shot12")
+        let frame14 = SKTexture(imageNamed: "Black_Shot013")
+        let animation = SKAction.animate(withNormalTextures: [BlackShotTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14], timePerFrame: 0.12)
+        blackShot.run(SKAction.repeatForever(animation))
+    }
     
     
     
