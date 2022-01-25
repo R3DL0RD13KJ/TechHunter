@@ -26,9 +26,18 @@ class GameScene: SKScene
     
     override func didMove(to _view: SKView)
     {
-        background.zPosition = 1
-        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
-        addChild(background)
+        super.didMove(to:view!)
+        DispatchQueue.main.async
+        {
+            self.background.zPosition = 0
+            self.background.position = CGPoint(x:self.size.width / 2, y: self.size.height / 2)
+            self.background.size = CGSize(width: self.size.width, height: self.size.height)
+            self.addChild(self.background)
+        }
+        
+//        background.zPosition = 1
+//        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+//        addChild(background)
     }
     
     
