@@ -7,6 +7,8 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
+import CoreGraphics
 
 class GameScene: SKScene
 {
@@ -16,14 +18,19 @@ class GameScene: SKScene
     var birdMonster = SKSpriteNode()
     var wormMonster = SKSpriteNode()
     var blackShot = SKSpriteNode()
+    var background = SKSpriteNode(imageNamed: "Alien Desert")
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
-    override func didMove(to view: SKView)
+    
+    override func didMove(to _view: SKView)
     {
-        
+        background.zPosition = 1
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
     }
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -208,6 +215,7 @@ class GameScene: SKScene
         let animation = SKAction.animate(withNormalTextures: [BlackShotTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14], timePerFrame: 0.12)
         blackShot.run(SKAction.repeatForever(animation))
     }
+    
     
     
     
