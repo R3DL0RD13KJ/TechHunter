@@ -34,6 +34,7 @@ class GameScene: SKScene
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
         }
+        
     
     }
     
@@ -90,6 +91,8 @@ class GameScene: SKScene
         
         gun.run(SKAction.repeatForever(animation))
     }
+        
+            
     func createmechalizzard()
     {
         let lizzardTexture = SKTexture(imageNamed: "Mecha_Lizzard0100")
@@ -221,6 +224,10 @@ class GameScene: SKScene
         let animation = SKAction.animate(withNormalTextures: [BlackShotTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14], timePerFrame: 0.12)
         blackShot.run(SKAction.repeatForever(animation))
     }
+    
+    
+    
+    
     
     
     
