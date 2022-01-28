@@ -38,7 +38,7 @@ class GameScene: SKScene
         //Link to the phyiscal nodes in Gamescene
         
         do {
-            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
+            gun = self.childNode(withName: "sprite_gun00") as? SKSpriteNode
             blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
             mechaLizard = self.childNode(withName: "Mecha_Lizzard0100") as! SKSpriteNode
             birdMonster = self.childNode(withName: "Bird_Monster00") as! SKSpriteNode
