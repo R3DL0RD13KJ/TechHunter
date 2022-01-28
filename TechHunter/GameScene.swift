@@ -26,6 +26,7 @@ class GameScene: SKScene
     
     override func didMove(to _view: SKView)
     {
+        //Set Background To game scene
         super.didMove(to:view!)
         DispatchQueue.main.async
         {
@@ -34,8 +35,26 @@ class GameScene: SKScene
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
         }
+        //Link to the phyiscal nodes in Gamescene
         
-    
+        do {
+            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
+            blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
+            mechaLizard = self.childNode(withName: "Mecha_Lizzard0100") as! SKSpriteNode
+            birdMonster = self.childNode(withName: "Bird_Monster00") as! SKSpriteNode
+            wormMonster = self.childNode(withName: "Worm_Monster00") as! SKSpriteNode
+            //Add Body to the vector?
+            gun.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            blackShot.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            mechaLizard.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            birdMonster.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            wormMonster.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            
+            let border = SKPhysicsBody(edgeLoopFrom: self.frame)
+            border.friction = 0
+            border.restitution = 1
+            self.physicsBody = border
+        }
     }
     
     
@@ -50,6 +69,7 @@ class GameScene: SKScene
         // Called before each frame is rendered
     }
     
+    //Create objects, or creatures
     func creategun()
     {
         let gunTexture = SKTexture(imageNamed: "sprite_gun00")
