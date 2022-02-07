@@ -13,7 +13,7 @@ import CoreGraphics
 class GameScene: SKScene
 {
     
-    var gun : SKSpriteNode!
+    var gun = SKSpriteNode()
     var mechaLizard = SKSpriteNode()
     var birdMonster = SKSpriteNode()
     var wormMonster = SKSpriteNode()
@@ -38,21 +38,25 @@ class GameScene: SKScene
         //Link to the phyiscal nodes in Gamescene
         
         do {
-            gun = self.childNode(withName: "sprite_gun00") as? SKSpriteNode
-            blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
-            mechaLizard = self.childNode(withName: "Mecha_Lizzard0100") as! SKSpriteNode
-            birdMonster = self.childNode(withName: "Bird_Monster00") as! SKSpriteNode
-            wormMonster = self.childNode(withName: "Worm_Monster00") as! SKSpriteNode
+//            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
+            print(self.childNode(withName: "sprite_gun00"))
+//            blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
+            print(self.childNode(withName: "Black_Shot00"))
+//            mechaLizard = self.childNode(withName: "Mecha_Lizzard0100") as! SKSpriteNode
+            print(self.childNode(withName: "Mecha_Lizzard"))
+//            birdMonster = self.childNode(withName: "Bird_Monster00") as! SKSpriteNode
+            print(self.childNode(withName: "Bird_Monster00"))
+//            wormMonster = self.childNode(withName: "Worm_Monster00") as! SKSpriteNode
+            print(self.childNode(withName: "Worm_Monster00"))
             //Add Body to the vector?
-            gun.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-            blackShot.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-            mechaLizard.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-            birdMonster.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-            wormMonster.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            gun.physicsBody?.categoryBitMask = 1
+            blackShot.physicsBody?.categoryBitMask = 2
+            mechaLizard.physicsBody?.categoryBitMask = 3
+            birdMonster.physicsBody?.categoryBitMask = 4
+            wormMonster.physicsBody?.categoryBitMask = 5
             
             let border = SKPhysicsBody(edgeLoopFrom: self.frame)
-            border.friction = 0
-            border.restitution = 1
+            
             self.physicsBody = border
         }
     }
