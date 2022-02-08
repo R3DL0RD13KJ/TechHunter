@@ -20,6 +20,7 @@ class GameScene: SKScene
     var blackShot = SKSpriteNode()
     var background = SKSpriteNode(imageNamed: "Alien Desert")
     
+    
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
@@ -30,24 +31,37 @@ class GameScene: SKScene
         super.didMove(to:view!)
         DispatchQueue.main.async
         {
-            self.background.zPosition = 0
+            self.background.zPosition = 0.0
             self.background.position = CGPoint(x:self.size.width / 2, y: self.size.height / 2)
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
+            
+        //Set sprites potition? (figure out why the sprites sometimes disapear)
+            self.gun.zPosition = 0.5
+            self.addChild(self.gun)
+            self.mechaLizard.zPosition = 0.5
+            self.addChild(self.mechaLizard)
+            self.birdMonster.zPosition = 0.5
+            self.addChild(self.birdMonster)
+            self.wormMonster.zPosition = 0.5
+            self.addChild(self.wormMonster)
+            self.blackShot.zPosition = 0.5
+            self.addChild(self.blackShot)
+            
         }
         //Link to the phyiscal nodes in Gamescene
         
         do {
 //            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
-            print(self.childNode(withName: "sprite_gun00"))
+//            print(self.childNode(withName: "sprite_gun00"))
 //            blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
-            print(self.childNode(withName: "Black_Shot00"))
+//            print(self.childNode(withName: "Black_Shot00"))
 //            mechaLizard = self.childNode(withName: "Mecha_Lizzard0100") as! SKSpriteNode
-            print(self.childNode(withName: "Mecha_Lizzard"))
+//            print(self.childNode(withName: "Mecha_Lizzard"))
 //            birdMonster = self.childNode(withName: "Bird_Monster00") as! SKSpriteNode
-            print(self.childNode(withName: "Bird_Monster00"))
+//            print(self.childNode(withName: "Bird_Monster00"))
 //            wormMonster = self.childNode(withName: "Worm_Monster00") as! SKSpriteNode
-            print(self.childNode(withName: "Worm_Monster00"))
+//            print(self.childNode(withName: "Worm_Monster00"))
             //Add Body to the vector?
             gun.physicsBody?.categoryBitMask = 1
             blackShot.physicsBody?.categoryBitMask = 2
@@ -58,6 +72,8 @@ class GameScene: SKScene
             let border = SKPhysicsBody(edgeLoopFrom: self.frame)
             
             self.physicsBody = border
+            
+            
         }
     }
     
@@ -79,7 +95,7 @@ class GameScene: SKScene
         let gunTexture = SKTexture(imageNamed: "sprite_gun00")
         gun = SKSpriteNode(texture: gunTexture)
         addChild(gun)
-        
+
         let frame2 = SKTexture(imageNamed: "sprite_gun01")
         let frame3 = SKTexture(imageNamed: "sprite_gun02")
         let frame4 = SKTexture(imageNamed: "sprite_gun03")
@@ -109,10 +125,10 @@ class GameScene: SKScene
         let frame28 = SKTexture(imageNamed: "sprite_gun27")
         let frame29 = SKTexture(imageNamed: "sprite_gun28")
         let frame30 = SKTexture(imageNamed: "sprite_gun29")
-        
-        
+
+
         let animation = SKAction.animate(withNormalTextures: [gunTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14, frame15, frame16, frame17, frame18, frame19, frame20, frame21, frame22, frame23, frame24, frame25, frame26, frame27, frame28, frame29, frame30], timePerFrame: 0.12)
-        
+
         gun.run(SKAction.repeatForever(animation))
     }
         
@@ -134,12 +150,12 @@ class GameScene: SKScene
         let frame11 = SKTexture(imageNamed: "Mecha_Lizzrd0110")
         let frame12 = SKTexture(imageNamed: "Mecha_Lizzard0111")
         let frame13 = SKTexture(imageNamed: "Mecha_Lizzard0112")
-        
+
         let animation = SKAction.animate(withNormalTextures: [lizzardTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13], timePerFrame: 0.12)
         mechaLizard.run(SKAction.repeatForever(animation))
     }
-    
-    
+
+
     func createbirdmonster()
     {
         let birdTexture = SKTexture(imageNamed: "Bird_Monster00")
@@ -175,8 +191,8 @@ class GameScene: SKScene
         let animation = SKAction.animate(withNormalTextures: [birdTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14, frame15, frame16, frame17, frame18, frame19, frame20, frame21, frame22, frame23, frame24, frame25, frame26, frame27, frame28], timePerFrame: 0.12)
         birdMonster.run(SKAction.repeatForever(animation))
     }
-    
-    
+
+
     func createwormmonster()
     {
         let wormTexture = SKTexture(imageNamed: "Worm_Monster00")
@@ -225,8 +241,8 @@ class GameScene: SKScene
         let animation = SKAction.animate(withNormalTextures: [wormTexture, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14, frame15, frame16, frame17, frame18, frame19, frame20, frame21, frame22, frame23, frame24, frame25, frame26, frame27, frame28, frame29, frame30, frame31, frame32, frame33, frame34, frame35, frame36, frame37, frame38, frame39, frame40, frame41], timePerFrame: 0.12)
         wormMonster.run(SKAction.repeatForever(animation))
     }
-    
-    
+
+
     func createBlackShot()
     {
         let BlackShotTexture = SKTexture(imageNamed: "Black_Shot00")
