@@ -37,7 +37,7 @@ class GameScene: SKScene
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
             
-        //Set sprites potition? (figure out why the sprites sometimes disapear)
+        //Set sprites potition? (figure out why the sprites sometimes disapear. (in progress))
             self.gun.zPosition = 0.5
             self.addChild(self.gun)
             self.mechaLizard.zPosition = 0.5
@@ -50,7 +50,7 @@ class GameScene: SKScene
             self.addChild(self.blackShot)
             
         }
-        //Link to the phyiscal nodes in Gamescene
+        //Link to the phyiscal nodes in Gamescene and at the same time a physics body and a border.
         
         do {
 //            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
@@ -90,7 +90,7 @@ class GameScene: SKScene
         // Called before each frame is rendered
     }
     
-    //Create objects, or creatures
+    //Create objects, or creatures. On top of that Create a false animation test
     func creategun()
     {
         let gunTexture = SKTexture(imageNamed: "sprite_gun00")
