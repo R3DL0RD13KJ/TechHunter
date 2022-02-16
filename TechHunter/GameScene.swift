@@ -32,21 +32,23 @@ class GameScene: SKScene
         super.didMove(to:view!)
         DispatchQueue.main.async
         {
-            self.background.zPosition = 0.0
+            self.background.zPosition = 0
             self.background.position = CGPoint(x:self.size.width / 2, y: self.size.height / 2)
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
             
-        //Set sprites potition? (figure out why the sprites sometimes disapear. (in progress))
-            self.gun.zPosition = 0.5
+            
+            
+        //Set sprites potition? (figure out why the sprites sometimes disapear.
+            self.gun.zPosition = 5
             self.addChild(self.gun)
-            self.mechaLizard.zPosition = 0.5
+            self.mechaLizard.zPosition = 5
             self.addChild(self.mechaLizard)
-            self.birdMonster.zPosition = 0.5
+            self.birdMonster.zPosition = 5
             self.addChild(self.birdMonster)
-            self.wormMonster.zPosition = 0.5
+            self.wormMonster.zPosition = 5
             self.addChild(self.wormMonster)
-            self.blackShot.zPosition = 0.5
+            self.blackShot.zPosition = 5
             self.addChild(self.blackShot)
             
         }
