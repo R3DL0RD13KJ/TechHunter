@@ -37,9 +37,7 @@ class GameScene: SKScene
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
             
-            
-            
-        //Set sprites potition? (figure out why the sprites sometimes disapear.
+        //Set sprites Zpotition
             self.gun.zPosition = 5
             self.addChild(self.gun)
             self.mechaLizard.zPosition = 5
@@ -75,9 +73,10 @@ class GameScene: SKScene
             let border = SKPhysicsBody(edgeLoopFrom: self.frame)
             
             self.physicsBody = border
-            
-            
         }
+        
+        
+        //Collin line 30
     }
     
     
