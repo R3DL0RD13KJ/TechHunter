@@ -53,6 +53,7 @@ class GameScene: SKScene
         //Link to the phyiscal nodes in Gamescene and at the same time a physics body and a border.
         
         do {
+            
 //            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
 //            print(self.childNode(withName: "sprite_gun00"))
 //            blackShot = self.childNode(withName: "Black_Shot00") as! SKSpriteNode
@@ -73,6 +74,8 @@ class GameScene: SKScene
             let border = SKPhysicsBody(edgeLoopFrom: self.frame)
             
             self.physicsBody = border
+            
+            
         }
         
         
