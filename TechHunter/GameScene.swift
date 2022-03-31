@@ -10,7 +10,9 @@ import GameplayKit
 import UIKit
 import CoreGraphics
 
-class GameScene: SKScene
+
+class GameScene: SKScene, SKPhysicsContactDelegate
+
 {
     
     var gun = SKSpriteNode()
@@ -49,10 +51,12 @@ class GameScene: SKScene
             self.blackShot.zPosition = 5
             self.addChild(self.blackShot)
             
+            
         }
         //Link to the phyiscal nodes in Gamescene and at the same time a physics body and a border.
         
-        do {
+        do
+        {
             
 //            gun = self.childNode(withName: "sprite_gun00") as! SKSpriteNode
 //            print(self.childNode(withName: "sprite_gun00"))
@@ -75,8 +79,39 @@ class GameScene: SKScene
             
             self.physicsBody = border
             
+//            func mySpritetie1()
+//            {
+//                gun = SKSpriteNode(imageNamed: "gun")
+//                gun.name = kAnimalNodeName
+//                gun.position = CGPoint(x: 170, y: 35)
+//                gun.size = CGSize(width: 36, height: 100)
+//                gun.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 22, height: 100))
+//                gun.physicsBody?.affectedByGravity = false
+//                gun.physicsBody?.categoryBitMask = physicsCategory.Item
+//                gun.physicsBody?.collisionBitMask = physicsCategory.Boarder
+//                gun.physicsBody?.contactTestBitMask = physicsCategory.Monster
+//                self.addChild(gun)
+//            }
+//
+//            func mySpritetie2()
+//            {
+//                blackShot = SKSpriteNode(imageNamed: "blackShot")
+//                blackShot.name = kAnimalNodeName
+//                blackShot.position  = CGPoint(x: 250, y: 60)
+//                blackShot.size = CGSize(width: 90, height: 79)
+//                blackShot.physicsBody = SKPhysicsBody(circleOfRadius: 25)
+//                blackShot.physicsBody?.affectedByGravity = false
+//                blackShot.physicsBody?.categoryBitMask = physicsCategory.Item
+//                blackShot.physicsBody?.collisionBitMask = physicsCategory.Boarder
+//                blackShot.physicsBody?.contactTestBitMask = physicsCategory.Monster
+//                self.addChild(blackShot)
+//            }
+//            let joint  = SKPhysicsJointPin.joint(withBodyA: gun.physicsBody!, bodyB: blackShot.physicsBody!,
+//                                                 anchor: CGPoint(x: gun.frame.midX, y: blackShot.frame.minY))
+//            self.physicsWorld.add(joint)
             
         }
+        
         
         
         //Collin line 30
