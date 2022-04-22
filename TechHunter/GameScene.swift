@@ -15,13 +15,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate
 
 {
     
-    var gun = SKSpriteNode()
+//    var gun = SKSpriteNode()
     var mechaLizard = SKSpriteNode()
     var birdMonster = SKSpriteNode()
     var wormMonster = SKSpriteNode()
     var blackShot = SKSpriteNode()
     var background = SKSpriteNode(imageNamed: "Alien Desert")
     
+    //Player is formed
+//    let player = SKSpriteNode(imageNamed: "blackShot")
     
     enum CollisionType: UInt32
     {
@@ -36,7 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     
     override func didMove(to _view: SKView)
     {
-        //Set Background To game scene
+        //Set background To game scene
         super.didMove(to:view!)
         DispatchQueue.main.async
         {
@@ -45,8 +47,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             self.background.size = CGSize(width: self.size.width, height: self.size.height)
             self.addChild(self.background)
         //Set sprites Zpotition
-            self.gun.zPosition = 5
-            self.addChild(self.gun)
+//            self.gun.zPosition = 5
+//            self.addChild(self.gun)
             self.mechaLizard.zPosition = 5
             self.addChild(self.mechaLizard)
             self.birdMonster.zPosition = 5
@@ -61,7 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         //Link to the phyiscal nodes in Gamescene and at the same time a physics body and a border.
         do
         {
-            gun.physicsBody?.categoryBitMask = 1
+//            gun.physicsBody?.categoryBitMask = 1
             blackShot.physicsBody?.categoryBitMask = 2
             mechaLizard.physicsBody?.categoryBitMask = 3
             birdMonster.physicsBody?.categoryBitMask = 4
@@ -71,32 +73,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             
             self.physicsBody = border
             
-            func mySpritetie1()
-            {
-                gun = SKSpriteNode(imageNamed: "gun")
-                gun.position = CGPoint(x: 210.56, y: -139.947)
-                gun.size = CGSize(width: 36, height: 100)
-                gun.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 22, height: 100))
-                gun.physicsBody?.affectedByGravity = false
-
-                self.addChild(gun)
-            }
-
-            func mySpritetie2()
-            {
-                blackShot = SKSpriteNode(imageNamed: "blackShot")
-                blackShot.position  = CGPoint(x: 45.773, y: 94.676)
-                blackShot.size = CGSize(width: 90, height: 79)
-                blackShot.physicsBody = SKPhysicsBody(circleOfRadius: 25)
-                blackShot.physicsBody?.affectedByGravity = false
-
-                self.addChild(blackShot)
-            }
- //           let joint = SKPhysicsJointPin.joint(withBodyA: blackShot, bodyB: gun, anchor: position)
- //           scene!.physicsWorld.add(SKPhysicsJoint)
- //           self.physicsWorld.add(joint)
+//            func mySpritetie1()
+//            {
+//                gun = SKSpriteNode(imageNamed: "gun")
+//                gun.position = CGPoint(x: 210.56, y: -139.947)
+//                gun.size = CGSize(width: 36, height: 100)
+//                gun.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 22, height: 100))
+//                gun.physicsBody?.affectedByGravity = false
+//
+//                self.addChild(gun)
+//            }
+//
+//            func mySpritetie2()
+//            {
+//                blackShot = SKSpriteNode(imageNamed: "blackShot")
+//                blackShot.position  = CGPoint(x: 45.773, y: 94.676)
+//                blackShot.size = CGSize(width: 90, height: 79)
+//                blackShot.physicsBody = SKPhysicsBody(circleOfRadius: 25)
+//                blackShot.physicsBody?.affectedByGravity = false
+//
+//                self.addChild(blackShot)
+//            }
+// //           let joint = SKPhysicsJointPin.joint(withBodyA: blackShot, bodyB: gun, anchor: position)
+// //           scene!.physicsWorld.add(SKPhysicsJoint)
+// //           self.physicsWorld.add(joint)
             
         }
+        //Player is created
+//        player.name = "blackShot"
+//        player.position.x = frame.minX + 75
+//        player.zPosition = 1
         
         
         
