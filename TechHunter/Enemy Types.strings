@@ -1,0 +1,28 @@
+/* 
+  Enemy Types.strings
+  TechHunter
+
+  Created by Kenneth Johnson on 4/28/22.
+  
+*/
+
+[
+        {
+            "name": "birdMonster",
+            "shield": 1,
+            "speed": 40,
+        },
+        {
+            "name": "mechaLizard",
+            "shield": 5,
+            "speed": 25,
+        },
+        {
+            "name": "wormMonster",
+            "shield": 1
+            "speed": 5
+        }
+
+
+
+]
