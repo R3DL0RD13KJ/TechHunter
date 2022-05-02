@@ -19,18 +19,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     var mechaLizard = SKSpriteNode()
     var birdMonster = SKSpriteNode()
     var wormMonster = SKSpriteNode()
-//    var blackShot = SKSpriteNode()
+    var blackShot = SKSpriteNode()
     var background = SKSpriteNode(imageNamed: "Alien Desert")
     
     //Player is formed
-    let player = SKSpriteNode(imageNamed: "blackShot")
+//    let player = SKSpriteNode(imageNamed: "blackShot")
     
-    enum CollisionType: UInt32
-    {
-        case player = 1
-        case playerWeapon = 2
-        case enemy = 4
-    }
+//    enum CollisionType: UInt32
+//    {
+//        case player = 1
+//        case playerWeapon = 2
+//        case enemy = 4
+//    }
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -55,8 +55,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             self.addChild(self.birdMonster)
             self.wormMonster.zPosition = 5
             self.addChild(self.wormMonster)
-//            self.blackShot.zPosition = 5
-//            self.addChild(self.blackShot)
+            self.blackShot.zPosition = 5
+            self.addChild(self.blackShot)
         }
         
         
@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         do
         {
 //            gun.physicsBody?.categoryBitMask = 1
-//            blackShot.physicsBody?.categoryBitMask = 2
+            blackShot.physicsBody?.categoryBitMask = 2
             mechaLizard.physicsBody?.categoryBitMask = 3
             birdMonster.physicsBody?.categoryBitMask = 4
             wormMonster.physicsBody?.categoryBitMask = 5

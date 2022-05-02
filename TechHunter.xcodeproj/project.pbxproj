@@ -14,7 +14,6 @@
 		FE27D5CE273041CF00B6706F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE27D5CC273041CF00B6706F /* Main.storyboard */; };
 		FE27D5D0273041D000B6706F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE27D5CF273041D000B6706F /* Assets.xcassets */; };
 		FE96F373281B03B40073762F /* Enemy Types.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE96F372281B03B40073762F /* Enemy Types.strings */; };
-		FE96F375281B05280073762F /* Enemy Waves.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE96F374281B05280073762F /* Enemy Waves.strings */; };
 		FE96F377281B05D90073762F /* Enemy Classifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96F376281B05D90073762F /* Enemy Classifications.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		FE27D5CF273041D000B6706F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE27D5D1273041D000B6706F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE96F372281B03B40073762F /* Enemy Types.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Enemy Types.strings"; sourceTree = "<group>"; };
-		FE96F374281B05280073762F /* Enemy Waves.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Enemy Waves.strings"; sourceTree = "<group>"; };
 		FE96F376281B05D90073762F /* Enemy Classifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enemy Classifications.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,6 @@
 				FE27D5CF273041D000B6706F /* Assets.xcassets */,
 				FE27D5D1273041D000B6706F /* Info.plist */,
 				FE96F372281B03B40073762F /* Enemy Types.strings */,
-				FE96F374281B05280073762F /* Enemy Waves.strings */,
 				FE96F376281B05D90073762F /* Enemy Classifications.swift */,
 			);
 			path = TechHunter;
@@ -136,7 +133,6 @@
 				FE27D5CE273041CF00B6706F /* Main.storyboard in Resources */,
 				FE27D5C5273041CF00B6706F /* GameScene.sks in Resources */,
 				FE96F373281B03B40073762F /* Enemy Types.strings in Resources */,
-				FE96F375281B05280073762F /* Enemy Waves.strings in Resources */,
 				FE27D5D0273041D000B6706F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
